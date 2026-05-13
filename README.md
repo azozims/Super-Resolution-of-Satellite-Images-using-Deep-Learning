@@ -1,7 +1,4 @@
-# Super-Resolution-of-Satellite-Images-using-Deep-Learning
-
-🛰️ Satellite-SR
-Deep Learning Super-Resolution for Satellite Imagery
+# 🛰️ Super-Resolution-of-Satellite-Images-using-Deep-Learning
 
 Satellite-SR is a lightweight PyTorch project for enhancing low-resolution orbital imagery using deep learning–based 4× super-resolution techniques.
 
@@ -21,7 +18,8 @@ Both models are trained and evaluated through fully reproducible Jupyter noteboo
 - 📊 Training Curve Visualization
 - 🔁 Data Augmentation Pipeline
 
-🧠 Models
+🧠 Models:
+
 - 🚀 ESPCN
 
 Efficient sub-pixel convolutional network using PixelShuffle for fast 4× upscaling.
