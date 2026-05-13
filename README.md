@@ -1,83 +1,81 @@
 # Super-Resolution-of-Satellite-Images-using-Deep-Learning
 
-Satellite-SR 🚀
-ESPCN & Autoencoder Super-Resolution for Orbital Imagery
+🛰️ Satellite-SR
+Deep Learning Super-Resolution for Satellite Imagery
 
-Satellite-SR is a PyTorch-based project for 4× satellite image super-resolution, focused on enhancing low-resolution orbital imagery using lightweight deep learning models.
+Satellite-SR is a lightweight PyTorch project for enhancing low-resolution orbital imagery using deep learning–based 4× super-resolution techniques.
 
-The repository includes two architectures:
+The project implements two efficient architectures designed for satellite image reconstruction:
 
-ESPCN — a fast and efficient sub-pixel convolution network
-SR-Autoencoder — an encoder–decoder model for spatial detail reconstruction
+- 🚀 ESPCN — fast sub-pixel convolution network optimized for efficient upscaling
+- 🧠 SR-Autoencoder — encoder–decoder architecture for spatial detail recovery
 
-Both models are trained through end-to-end Jupyter notebooks with:
+Both models are trained and evaluated through fully reproducible Jupyter notebooks with automatic checkpointing and image quality evaluation.
 
-📈 PSNR & SSIM evaluation
-💾 Automatic checkpoint saving
-🖼️ Bicubic baseline comparison
-📊 Training curve visualization
-🔁 Data augmentation support
+✨ Key Features
+- 🔬 4× Satellite Image Super-Resolution
+- ⚡ Lightweight & Efficient Architectures
+- 📈 PSNR / SSIM Evaluation
+- 💾 Automatic Best Checkpoint Saving
+- 🖼️ Bicubic Baseline Comparison
+- 📊 Training Curve Visualization
+- 🔁 Data Augmentation Pipeline
+
+
 📂 Repository Structure
-├── espcn_v3.ipynb                     # ESPCN training & evaluation
-├── autoencoder_sr_espcn_params.ipynb # SR-Autoencoder pipeline
+├── espcn_v3.ipynb
+├── autoencoder_sr_espcn_params.ipynb
+│
 ├── checkpoints/
 │   └── espcn_best.pth
+│
 └── checkpoints_ae_autoencoder/
     └── autoencoder_best.pth
-⚙️ Models
-ESPCN
 
-Efficient super-resolution network using PixelShuffle for fast 4× upscaling.
 
-Architecture
+🧠 Models
+- 🚀 ESPCN
+
+Efficient sub-pixel convolutional network using PixelShuffle for fast 4× upscaling.
 
 Conv(3→64, 5×5) + PReLU
 Conv(64→32, 3×3) + PReLU
 Conv(32→3×16, 3×3) + PixelShuffle(×4)
-SR-Autoencoder
 
-Encoder–decoder architecture that reconstructs high-resolution satellite images using transposed convolutions.
 
-Architecture
+- 🧠 SR-Autoencoder
+
+Encoder–decoder network for reconstructing high-resolution satellite imagery.
 
 Encoder: 3 → 64 → 128 → 256
 Decoder: 256 → 128 → 64 → 3
-🛠️ Installation
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install numpy pillow matplotlib tqdm
+
+
+⚙️ Training Configuration
+Parameter	Value:
+Scale Factor	×4
+Batch Size	48
+Epochs	50
+Learning Rate	1e-4
+Optimizer	Adam
+Loss Function	MSE
+
+
+
 📁 Dataset Format
 dataset/
 ├── LR_new/   # Low-resolution images
 └── hr/       # High-resolution ground truth
 
-Update dataset paths inside the notebooks before training.
 
-▶️ Run Training
-jupyter notebook espcn_v3.ipynb
-
-or
-
-jupyter notebook autoencoder_sr_espcn_params.ipynb
-📊 Training Setup
-Parameter	Value
-Scale Factor	×4
-Batch Size	48
-Epochs	50
-Learning Rate	1e-4
-Loss	MSE
-Optimizer	Adam
-📈 Evaluation
-
+📊 Evaluation
 The notebooks automatically:
+- Compute PSNR & SSIM
+- Compare against bicubic interpolation
+- Save the best model checkpoints
+- Generate training curve visualizations
 
-Load the best checkpoint
-Compute PSNR & SSIM
-Compare against bicubic interpolation
-Save training curves
-📋 Requirements
-torch
-torchvision
-numpy
-Pillow
-matplotlib
-tqdm
+
+🛠️ Requirements:
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install numpy pillow matplotlib tqdm
