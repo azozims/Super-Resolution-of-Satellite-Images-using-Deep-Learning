@@ -21,18 +21,6 @@ Both models are trained and evaluated through fully reproducible Jupyter noteboo
 - 📊 Training Curve Visualization
 - 🔁 Data Augmentation Pipeline
 
-
-📂 Repository Structure
-├── espcn_v3.ipynb
-├── autoencoder_sr_espcn_params.ipynb
-│
-├── checkpoints/
-│   └── espcn_best.pth
-│
-└── checkpoints_ae_autoencoder/
-    └── autoencoder_best.pth
-
-
 🧠 Models
 - 🚀 ESPCN
 
@@ -49,23 +37,6 @@ Encoder–decoder network for reconstructing high-resolution satellite imagery.
 
 Encoder: 3 → 64 → 128 → 256
 Decoder: 256 → 128 → 64 → 3
-
-
-⚙️ Training Configuration
-Parameter	Value:
-Scale Factor	×4
-Batch Size	48
-Epochs	50
-Learning Rate	1e-4
-Optimizer	Adam
-Loss Function	MSE
-
-
-
-📁 Dataset Format
-dataset/
-├── LR_new/   # Low-resolution images
-└── hr/       # High-resolution ground truth
 
 
 📊 Evaluation
