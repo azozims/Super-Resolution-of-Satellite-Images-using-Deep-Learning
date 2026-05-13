@@ -77,5 +77,5 @@ The notebooks automatically:
 
 
 🛠️ Requirements:
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install numpy pillow matplotlib tqdm
+- pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+- pip install numpy pillow matplotlib tqdm
